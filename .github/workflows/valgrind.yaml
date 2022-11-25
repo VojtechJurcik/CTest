@@ -1,5 +1,5 @@
 # .github/workflows/valgrind.yml
-name: <workflow-name>
+name: test valgrind
 on: [push, pull_request]
 
 jobs:
