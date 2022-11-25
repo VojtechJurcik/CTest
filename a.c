@@ -1,13 +1,8 @@
-  #include <stdlib.h>
+int* a = new int;
+for (int i = 0; i < 10000; i++)
+{
+    int* b = a; // we copy the address held by a
+    delete b; // uh oh we call delete on that same address again
+    b = new int; // put new memory in b, this does nothing to a
+} // leak here as b goes out of scope and we no longer have the address it held
 
-  void f(void)
-  {
-     int* x = malloc(10 * sizeof(int));
-     x[10] = 0;        // problem 1: heap block overrun
-  }                    // problem 2: memory leak -- x not freed
-
-  int main(void)
-  {
-     f();
-     return 0;
-  }
