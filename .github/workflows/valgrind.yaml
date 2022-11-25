@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     name: 42valgrind
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: 42valgrind Leak checker
       uses: solareenlo/42valgrind-action@v1.0.3
       with:
